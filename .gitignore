@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtualenv
+venv/
+.venv/
+env/
+
+# Playwright
+playwright-report/
+
+# Output gerado pelo scraper
+output/
+
+# Cookies/sessão Amazon (contém dados sensíveis)
+amazon_cookies.json
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
