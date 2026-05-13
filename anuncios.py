@@ -38,6 +38,27 @@ CATEGORIES = {
         "label": "Esportes e Aventura",
         "url": "https://www.amazon.com.br/gp/bestsellers/sports/",
     },
+    "automotive": {
+        "label": "Automotivo",
+        "url": "https://www.amazon.com.br/gp/bestsellers/automotive/",
+    },
+    "pets_cachorro": {
+        "label": "Pet Shop - Cachorro",
+        "url": "https://www.amazon.com.br/gp/bestsellers/pet-products/19653951011/ref=zg_bs_nav_pet-products_1",
+    },
+    "pets_gato": {
+        "label": "Pet Shop - Gato",
+        "url": "https://www.amazon.com.br/gp/bestsellers/pet-products/19653950011/ref=zg_bs_unv_pet-products_2_19653991011_1",
+    },
+    "perfurmaria_feminina": {
+        "label": "Perfumaria Feminina",
+        "url": "https://www.amazon.com.br/s?rh=n%3A16754378011&_encoding=UTF8&pf_rd_p=891c72cf-46f2-447f-9edb-96562eae7920&pf_rd_r=VV479K51DPKS5BXXMH0J&rd=1&ref=cct_cg_grid_1a1",
+    },
+    "perfumaria_masculina": {
+        "label": "Perfumaria Masculina",
+        "url": "https://www.amazon.com.br/s?rh=n%3A16754380011&_encoding=UTF8&pf_rd_p=891c72cf-46f2-447f-9edb-96562eae7920&pf_rd_r=1E3P54K23M595YTJ0DAQ&rd=1&ref=cct_cg_grid_1b1",
+    },
+    
 }
 
 TOP_N = 10  # Quantidade de produtos por categoria
