@@ -29,7 +29,22 @@ def parse_price(text: str) -> float:
 
 def log(msg: str, level: str = "INFO") -> None:
     icons = {"INFO": "ℹ️", "OK": "✅", "WARN": "⚠️", "ERROR": "❌", "STEP": "🔷"}
-    print(f"{icons.get(level, '▸')} {msg}")
+    icon = icons.get(level, "▸")
+    try:
+        print(f"{icon} {msg}")
+    except UnicodeEncodeError:
+        import sys
+        safe_icons = {"INFO": "[INFO]", "OK": "[OK]", "WARN": "[WARN]", "ERROR": "[ERROR]", "STEP": "[STEP]"}
+        safe_icon = safe_icons.get(level, "[INFO]")
+        encoding = sys.stdout.encoding or "utf-8"
+        full_msg = f"{safe_icon} {msg}"
+        try:
+            print(full_msg.encode(encoding, errors="replace").decode(encoding))
+        except Exception:
+            try:
+                print(full_msg.encode("ascii", errors="replace").decode("ascii"))
+            except Exception:
+                pass
 
 
 def save_json(products: list[dict], path: str) -> None:
@@ -77,6 +92,12 @@ def save_amazon_output(data: dict, output_dir: str, top_n: int) -> list[dict]:
     consolidated = os.path.join(output_dir, f"amazon_all_{timestamp}.json")
     with open(consolidated, "w", encoding="utf-8") as f:
         json.dump(all_products, f, ensure_ascii=False, indent=2)
-    log(f"Consolidado Amazon: {consolidated} ({len(all_products)} produtos)", "OK")
+    
+    # Também salva no arquivo estável sem timestamp para facilitar o merge
+    stable_path = os.path.join(output_dir, "amazon_all.json")
+    with open(stable_path, "w", encoding="utf-8") as f:
+        json.dump(all_products, f, ensure_ascii=False, indent=2)
+        
+    log(f"Consolidado Amazon: {consolidated} e {stable_path} ({len(all_products)} produtos)", "OK")
 
     return all_products

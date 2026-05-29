@@ -3,7 +3,7 @@ import os
 # ── Amazon ─────────────────────────────────────────────────────────────────────
 AMAZON_AFFILIATE_TAG = os.getenv("AMAZON_AFFILIATE_TAG", "fercugliandro-20")
 AMAZON_COOKIES_FILE = "amazon_cookies.json"
-AMAZON_TOP_N = 10
+AMAZON_TOP_N = 40
 
 AMAZON_CATEGORIES = {
     "tech": {
@@ -24,7 +24,7 @@ AMAZON_CATEGORIES = {
     },
     "baby": {
         "label": "Bebês",
-        "url": "https://www.amazon.com.br/gp/browse.html?node=17242603011",
+        "url": "https://www.amazon.com.br/gp/bestsellers/baby-products/?ie=UTF8&ref_=sv_b_1",
     },
     "fitness": {
         "label": "Esportes e Aventura",
@@ -44,12 +44,8 @@ AMAZON_CATEGORIES = {
     },
     "perfumaria_feminina": {
         "label": "Perfumaria Feminina",
-        "url": "https://www.amazon.com.br/s?rh=n%3A16754378011",
-    },
-    "perfumaria_masculina": {
-        "label": "Perfumaria Masculina",
-        "url": "https://www.amazon.com.br/s?rh=n%3A16754380011",
-    },
+        "url": "https://www.amazon.com.br/gp/bestsellers/beauty/?ie=UTF8&ref_=sv_b_1",
+    }
 }
 
 # ── Mercado Livre ───────────────────────────────────────────────────────────────
@@ -90,7 +86,7 @@ ML_KEYWORD_CATEGORY_MAP = {
     "beauty": [
         "shampoo", "condicionador", "hidratante", "protetor solar",
         "maquiagem", "batom", "base", "sérum", "creme", "desodorante",
-        "escova", "secador", "chapinha", "prancha",
+        "escova", "secador", "chapinha", "prancha", "perfumaria"
     ],
 }
 
